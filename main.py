@@ -152,6 +152,54 @@ def get_cmd():
     msg = msg.lower()
     return msg
 
+def afficher_menu():
+    print("Choisissez une option :")
+    print("1 -> Ajout d'une performance")
+    print("2 -> Ajout d'un individu")
+    print("3 -> Ajout d'une nouvelle nage")
+    print("4 -> Liste toutes les performances")
+    print("5 -> Liste les performances d'un nageur")
+    print("6 -> Liste tous les nageurs pratiquant une nage")
+    print("7 -> Sauvegarde les données utilisateurs")
+    print("8 -> Charge les données utilisateurs")
+    print("0 -> Quitte le logiciel")
+
+def gestion_commande():
+    while True:
+        afficher_menu()
+        choix = input("Entrez le numéro correspondant à votre choix : ")
+        if choix == "1":
+            print("Ajout d'une performance en cours...")
+            # Ajouter la logique associée ici
+        elif choix == "2":
+            print("Ajout d'un individu en cours...")
+            # Ajouter la logique associée ici
+        elif choix == "3":
+            print("Ajout d'une nouvelle nage en cours...")
+            # Ajouter la logique associée ici
+        elif choix == "4":
+            print("Liste des performances :")
+            # Ajouter la logique associée ici
+        elif choix == "5":
+            print("Liste des performances d'un nageur :")
+            # Ajouter la logique associée ici
+        elif choix == "6":
+            print("Liste des nageurs pratiquant une nage :")
+            # Ajouter la logique associée ici
+        elif choix == "7":
+            print("Sauvegarde des données utilisateurs...")
+            # Ajouter la logique associée ici
+        elif choix == "8":
+            print("Chargement des données utilisateurs...")
+            # Ajouter la logique associée ici
+        elif choix == "0":
+            print("Quitte le logiciel. À bientôt !")
+            break
+        else:
+            print("Option invalide. Veuillez réessayer.")
+
+# Lancer le menu interactif
+gestion_commande()
 #
 #   Programme principal
 #
@@ -161,38 +209,38 @@ if os.path.exists('save.backup'):
 while isAlive:
     commande = get_cmd()
 
-    if commande == 'ajout':
+    if commande == "1":
         cmd_ajout(param)
         continue
-    if commande == 'individu':
+    if commande == "2":
         cmd_individu(param)
         continue
 
-    if commande == 'nouvelle nage':
+    if commande == "3":
         cmd_nouvelle_nage(param)
         continue
 
-    if commande == 'liste':
+    if commande == "4":
         cmd_liste(param)
         continue
 
-    if commande == 'nageur':
+    if commande == "5":
         cmd_nageur(param)
         continue
 
-    if commande == 'nage':
+    if commande == "6":
         cmd_nage(param)
         continue
 
-    if commande == 'save':
+    if commande == "7":
         cmd_save(param)
         continue
 
-    if commande == 'load':
+    if commande == "8":
         cmd_load(param)
         continue
 
-    if commande == 'exit':
+    if commande == "0":
         isAlive = cmd_exit(param)
         continue
 
