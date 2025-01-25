@@ -1,5 +1,6 @@
 import os
 from datetime import datetime
+from get_int_value import get_int_value  # Importer la fonction depuis get_value.py
 
 # Default values
 param = {'bdd': [(1, 3, 10, '2024-05-11'), (2, 1, 13, '2024-05-12'), (3, 2, 6, '2024-05-11'), (3, 1, 8, '2024-05-13')],
@@ -42,11 +43,11 @@ def cmd_ajout(param):
     """Ajoute une performance."""
     for elt in param['nageurs']:
         print(f"{elt[0]:5} : {elt[1]}")
-    a = int(input("Nageur n° ? "))
+    a = get_int_value()  # Saisie robuste pour le numéro de nageur
     for elt in param['nages']:
         print(f"{elt[0]:5} : {elt[1]}")
-    b = int(input("Nage n° ? "))
-    c = int(input("Combien de longueurs ? "))
+    b = get_int_value()  # Saisie robuste pour le numéro de nage
+    c = get_int_value()  # Saisie robuste pour le nombre de longueurs
     date = input("Date de l'événement (YYYY-MM-DD) ? ")
     # Validation du format de la date
     try:
@@ -88,7 +89,7 @@ def cmd_nageur(param):
     """Liste les performances d'un nageur."""
     for elt in param['nageurs']:
         print(f"{elt[0]:5} : {elt[1]}")
-    tmp = int(input("Quel numéro de nageur ? "))
+    tmp = get_int_value()  # Saisie robuste pour le numéro de nageur
     print(f"Performances de {get_str_from_num_in_list(tmp, param['nageurs'])}")
     print("  nage   | longueur | date")
     print("---------------------------")
